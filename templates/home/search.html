@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}search results{% endblock title %}
+{% block body %}
+
+<h1 style="text-align:center;">Search Results</h1>
+{% if allposts|length < 1 %}
+<div style='width:70%; margin:auto;'>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Message:</strong> No search results found! try something else.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</div>
+{% endif %}
+{% if allposts|length > 0 %}
+  <div style='width:70%; margin:auto;'>
+   <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Message:</strong> Most Matching results have been filtered for you. Happy reading!
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  </div>
+{% endif %}
+
+{% for post in allposts %}
+    <div class="card text-center my-4" style='width:80%; margin:auto; '>
+    <div class="card-header">
+    {{post.author}}
+    </div>
+    <div class="card-body">
+    <h5 class="card-title">{{post.title}}</h5>
+    <p class="card-text">{{post.content | truncatechars:400}}</p>
+    <a href="/blog/{{post.slug}}" class="btn btn-primary">CONTINUE READING</a>
+  </div>
+  <div class="card-footer text-muted">
+    {{post.timestamp}}
+  </div>
+</div>
+
+
+
+{% endfor %}
+{% endblock body %}

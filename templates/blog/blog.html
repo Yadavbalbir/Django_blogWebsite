@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}blog{% endblock title %}
+{% block body %}
+
+
+{% for post in posts %}
+
+    <div class="card text-center my-4" style='width:80%; margin:auto; '>
+  <div class="card-header">
+    {{post.author}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{post.title}}</h5>
+    <p class="card-text">{{post.content|safe| truncatechars:400}}</p>
+    <a href="/blog/{{post.slug}}" class="btn btn-primary">CONTINUE READING</a>
+  </div>
+  <div class="card-footer text-muted">
+    {{post.timestamp}}
+  </div>
+</div>
+
+
+
+{% endfor %}
+{% endblock body %}

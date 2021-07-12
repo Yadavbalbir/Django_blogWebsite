@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}blogpost{% endblock title %}
+{% block body %}
+
+<div style="width: 85%; margin:auto">
+  <article class="blog-post my-4">
+        <h2 class="blog-post-title">{{post.title}}</h2>
+        <p class="blog-post-meta">{{post.timestamp}} by {{post.author}}</p>
+        <p style='font-size:20px;'>{{post.content|safe}}</p> 
+      </article>
+</div>
+
+{% endblock body %}
