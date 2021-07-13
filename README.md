@@ -31,7 +31,7 @@ Now you must see a link for running the project on local server. Open the link i
   You will see <code>Superuser created successfully.</code>. Now you can go back to admin page and enter your details that you used to create superuser.  
   <br>
   
-  You can see everything that are there in the backend. You can post blog by using html tags. Like if you want to make heading then you can use heading tag (<h2>, <h1> etc). You can modify blogs as well. 
+  You can see everything that are there in the backend. You can post blog by using html tags. Like if you want to make heading then you can use heading tag and so on. You can modify blogs as well. 
     <br>
     
 </p>
